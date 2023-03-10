@@ -28,6 +28,7 @@ cloudinary.config({
 //  routers
 const authRouter = require("./routes/authRoutes");
 const haberRouter = require("./routes/haberRoutes");
+const baslikRouter = require("./routes/baslikRoutes");
 // middleware
 const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
@@ -45,6 +46,7 @@ app.use(fileUpload({ useTempFiles: true }));
 //app.use("api/v1") stuff will come here
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/habers", haberRouter);
+app.use("/api/v1/basliks", baslikRouter);
 
 const port = process.env.PORT || 3002;
 const start = async () => {
