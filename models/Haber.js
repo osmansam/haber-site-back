@@ -22,11 +22,19 @@ const haberSchema = new Schema({
   },
   content: {
     type: String,
-    required: true,
+    // required: true,
   },
   image: {
     type: String,
-    required: true,
+    // required: true,
+  },
+  imageWidth: {
+    type: Number,
+    // required: true,
+  },
+  imageHeight: {
+    type: Number,
+    // required: true,
   },
   createdAt: {
     type: Date,
