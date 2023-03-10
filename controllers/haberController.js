@@ -27,6 +27,10 @@ const createHaberImage = async (req, res) => {
 
 //create Haber
 const createHaber = async (req, res, next) => {
+  const { type, title } = req.body;
+  if (!type || !title) {
+    throw new CustomError.BadRequestError("Please provide type and title");
+  }
   const haber = await Haber.create(req.body);
   res.status(StatusCodes.CREATED).json({
     success: true,
